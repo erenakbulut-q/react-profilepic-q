@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Icon from "../Icon/Icon";
-
+// import Range from '@atlaskit/range';
 import stylesheet from "./ZoomScale.scss";
 
 const MIN = "MIN";
@@ -41,10 +41,26 @@ class ZoomScale extends Component {
       zoomMaxCssClasses.push(stylesheet["zoom-scale__icon--disabled"]);
 
     return (
-      <div style={{display: "flex"}} className={stylesheet["zoom-scale"]}>
-        <img style={{margin: 5}} src="https://cdn.qubitro.com/portal/icon_chart_zoom_out.svg" height="20" width="20" name="trash" size={20} />
-        {this.props.slider}
-        {/* <input
+      <div style={{ display: "flex" }} className={stylesheet["zoom-scale"]}>
+        <img style={{ margin: 5 }} src="https://cdn.qubitro.com/portal/icon_chart_zoom_out.svg" height="20" width="20" name="trash" size={20} />
+        {/* <FieldRange
+          className={stylesheet["zoom-scale__handler"]}
+          max={Number(this.props.max).toFixed(2)}
+          min={Number(this.props.min).toFixed(2)}
+          step={Number(this.props.step).toFixed(2)}
+          value={Number(this.props.value).toFixed(2)}
+          onChange={this.onChange.bind(this)}
+          style={{ margin: 8 }}
+        /> */}
+        {/* <Range 
+          // className={stylesheet["zoom-scale__handler"]}
+          max={Number(this.props.max).toFixed(2)}
+          min={Number(this.props.min).toFixed(2)}
+          step={Number(this.props.step).toFixed(2)}
+          value={Number(this.props.value).toFixed(2)}
+          // onChange={this.onChange.bind(this)}
+        /> */}
+        <input
           type="range"
           className={stylesheet["zoom-scale__handler"]}
           max={Number(this.props.max).toFixed(2)}
@@ -53,8 +69,8 @@ class ZoomScale extends Component {
           value={Number(this.props.value).toFixed(2)}
           onChange={this.onChange.bind(this)}
           style={{margin: 8}}
-        /> */}
-        <img style={{margin: 5}} src="https://cdn.qubitro.com/portal/icon_chart_zoom_in.svg" height="20" width="20" name="trash" size={20} />
+        />
+        <img style={{ margin: 5 }} src="https://cdn.qubitro.com/portal/icon_chart_zoom_in.svg" height="20" width="20" name="trash" size={20} />
       </div>
     );
   }
